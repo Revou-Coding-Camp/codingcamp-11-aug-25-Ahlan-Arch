@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome Page</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #ff0000, #550000);
+        overflow: hidden;
+        color: #fff;
+      }
+
+      /* Background animation */
+      .bg-animation {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.12) 8%,
+          transparent 12%
+        );
+        background-size: 60px 60px;
+        animation: move 6s linear infinite;
+        z-index: 0;
+        opacity: 0.4;
+      }
+      @keyframes move {
+        from {
+          background-position: 0 0;
+        }
+        to {
+          background-position: 120px 120px;
+        }
+      }
+
+      /* Content */
+      .welcome-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        animation: fadeIn 1s ease forwards;
+      }
+
+      .welcome-content h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .welcome-content input {
+        width: 250px;
+        padding: 0.8rem;
+        border: none;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+      }
+
+      .btn-start {
+        background: #fff;
+        color: #e60000;
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: bold;
+        transition: 0.3s ease-in-out;
+      }
+
+      .btn-start:hover {
+        background: #f2f2f2;
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+      }
+
+      .welcome-message {
+        font-size: 1.4rem;
+        margin-top: 2rem;
+        font-weight: bold;
+        opacity: 0;
+        transition: opacity 0.6s ease-in-out;
+      }
+      .fade-in {
+        opacity: 1;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background animation -->
+    <div class="bg-animation"></div>
+
+    <!-- Welcome content -->
+    <div class="welcome-content" id="overlay">
+      <h1 id="typingText"></h1>
+      <input type="text" id="username" placeholder="Enter your name" required />
+      <br />
+      <button class="btn-start" onclick="startWebsite()">
+        Start Here <span>➔</span>
+      </button>
+      <p id="welcomeText" class="welcome-message"></p>
+    </div>
+
+    <script>
+      // Typing effect
+      const text = 'Welcome to My Portfolio';
+      let i = 0;
+      function typing() {
+        if (i < text.length) {
+          document.getElementById('typingText').innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typing, 70);
+        }
+      }
+      typing();
+
+      // Start button logic
+      function startWebsite() {
+        const name = document.getElementById('username').value;
+        const welcomeText = document.getElementById('welcomeText');
+
+        if (name.trim() === '') {
+          welcomeText.textContent = 'Please enter your name first!';
+          welcomeText.style.color = 'yellow';
+          welcomeText.classList.add('fade-in');
+          return;
+        }
+
+        // Welcome message
+        welcomeText.textContent = `Welcome, ${name}!`;
+        welcomeText.style.color = '#fff';
+        welcomeText.classList.add('fade-in');
+
+        // Redirect ke halaman utama setelah 3 detik
+        setTimeout(() => {
+          window.location.href = 'portofolio.html'; // ganti dengan file utama portfolio kamu
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
