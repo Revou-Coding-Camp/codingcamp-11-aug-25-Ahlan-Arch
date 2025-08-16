@@ -1,0 +1,533 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --primaryTextColor: #232e35;
+    --secondaryTextColor: #656d72;
+    
+    --borderColor: #f1f1f1;
+    --lineColor: #d9d9d9;
+
+    --primaryBackgroundColor: #fff;
+    --secondaryBackground: #fbfbfb;
+    --thirdBackgroundColor: #f5f3fe;
+
+    --primaryIconColor: #d91e18;
+    --primaryIconColorHover: #d64541;
+
+    --sectionPadding: 6rem 0;
+
+    --itemBorderRadius: 0.7rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6, strong {
+    color: var(--primaryTextColor);
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.9rem;
+}
+
+p, span, label, input, textarea, li {
+    color: var(--secondaryTextColor);
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width:1200px) {
+    .main-container {
+        width: 90%;
+    } 
+}
+
+/* Tombol Lihat CV Saya */
+.btn {
+   padding: 1rem 1.5rem;
+   background: white;
+   border: 1.5px solid var(--borderColor);
+   cursor: pointer;
+   transition: .2s ease-in-out;
+}
+
+.btn:hover {
+   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+
+/* Judul */
+.section-title {
+   margin: 1rem 0 4rem;
+   font-size: 2rem;
+}
+
+.pre-title {
+   text-transform: uppercase;
+   letter-spacing: .5rem;
+   color: var(--secondaryTextColor);
+   position: relative;
+   padding-left: 40px;
+   width: fit-content;
+   font-weight: 400;
+   font-size: 0.9rem;
+}
+
+.pre-title::before {
+   content: "";
+   width: 30px;
+   height: 1px;
+   background: var(--lineColor);
+   position: absolute;
+   display: block;
+   left: 0;
+   top: 50%; 
+}
+
+/* Layout */
+.grid-3 {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 3rem;
+}
+
+/* Logo dan Menu Navigasi */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.logo a {
+    color: var(--primaryTextColor);
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a {
+    color: var(--primaryTextColor);
+}
+
+/* Burger Titik Tiga */
+.burger div {
+    width: 25px;
+    height: 2px;
+    background-color: #000;
+    margin: 7px;
+    transition: all .3s;
+    z-index: 99;
+}
+
+.burger {
+    display: none;
+    z-index: 99;
+    position: fixed;
+    top: 33px;
+    right: 35px;
+}
+
+/* Hero */
+#hero {
+    height: 720px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.hero-name {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0.5rem 0 1rem;
+}
+
+.hero-name span {
+    color: var(--primaryIconColor);
+}
+
+.hero-right img{
+    width: 90%;   
+}
+
+.hero-right {
+    display: flex;
+    justify-content: center;
+}
+
+/* Bagian Services */
+#services {
+    background-color: var(--secondaryBackground);
+    padding: var(--sectionPadding);
+}
+
+.services .pre-title {
+    margin: 0 auto;
+}
+
+.services-title {
+    text-align: center;
+}
+
+.service {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: var(--primaryBackgroundColor);
+    border-radius: var(--itemBorderRadius);
+}
+
+.service h4 {
+    margin: 1.5rem 0;
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.service-icon {
+    background: var(--thirdBackgroundColor);
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.service-icon svg {
+    fill: var(--primaryIconColor);
+}
+
+/* Prestasi King Ahlan */
+#portofolios {
+    padding: var(--sectionPadding);
+}
+
+.portofolio {
+    border-radius: var(--itemBorderRadius);
+    overflow: hidden;
+    border: 1px solid var(--borderColor);
+}
+
+.portofolio-cover {
+    height: 250px;   
+}
+
+.portofolio-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portofolio-info {
+    padding: 2rem 1.5rem;
+}
+
+.portofolio-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.portofolio h4 {
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.portofolio-title a svg:hover {
+    fill: var(--primaryIconColor);
+}
+
+.portofolio-title a svg {
+    transition: 0.2s ease-in-out;
+}
+
+.portofolio-tags {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.portofolio-tags div {
+    font-size: .9rem;
+    border: 1px solid var(--borderColor);
+    padding: .4rem 1rem;
+    color: var(--secondaryTextColor);
+}
+
+/* Pendidikan dan Skills */
+#skills {
+    padding: var(--sectionPadding);
+    background: var(--secondaryBackground);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.education {
+    display: flex;
+    gap: 2rem;
+}
+
+.education .line {
+    padding: 0 .7rem;
+}
+
+.education .line div {
+    width: 2px;
+    height: 100%;
+    background: var(--borderColor);
+    position: relative;
+}
+
+.education-info p {
+   margin: .6rem 0 1.4rem; 
+}
+
+.education-years {
+    margin-bottom: 3rem;
+}
+
+/* Benjolan Point */
+.education .line div:before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: var(--borderColor);
+    border-radius: 50%;
+    position: absolute;
+    left: -6px;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 1.5rem;
+}
+
+.skills-right ul {
+    line-height: 2rem;
+    padding: 0 1rem;
+}
+
+/* Bagian Kontak */
+#contact {
+    padding: var(--sectionPadding);
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.contact-form div {
+    margin-bottom: 1.4rem;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: .75rem 1.3rem;
+    font-family: "Roboto", sans-serif;
+    background: var(--secondaryBackground);
+    border: 1px solid var(--borderColor);
+    border-radius: 3px;
+    resize: none;
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: #9d9fa1;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border: 1px solid #7d7d7d;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: .75rem 1.3rem;
+    background-color: var(--primaryIconColor);
+    color: #FFF;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.btn-submit:hover {
+    background: var(--primaryIconColorHover);
+}
+
+.contact-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.contact-item-icon {
+    background: var(--thirdBackgroundColor);
+    width: 53px;
+    height: 53px;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-item-icon svg {
+    fill: var(--primaryIconColor);
+}
+
+.contact-item-detail h4 {
+    margin-bottom: 0.6rem;
+}
+
+/* Footer */
+
+footer {
+    position: relative;
+    width: 100%;
+    background: #d91e18;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .social-icon, footer .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+footer .social-icon li, footer .menu li{
+    list-style: none;
+}
+
+footer .social-icon li a {
+    font-size: 2em;
+    color: #FFF;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+footer .social-icon li a:hover {
+    transform: translateY(-10px);
+}
+
+footer .menu li a {
+    font-size: 1.2em;
+    color: #FFF;
+    margin: 0 10px;
+    display: inline-block;
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+footer .menu li a:hover {
+    opacity: 1;
+}
+
+footer p {
+    color: #FFF;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+/* Wave Effect */
+
+footer .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(/Images/wave1.png);
+    background-size: 1000px 100px;
+}
+
+footer .wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave 4s linear infinite;
+}
+
+footer .wave#wave2 {
+    z-index: 1000;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWave_02 4s linear infinite;
+}
+
+footer .wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWave 3s linear infinite;
+}
+
+footer .wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animateWave_02 3s linear infinite;
+}
+
+@keyframes animateWave {
+    0% {
+     background-position-x: 1000px;   
+    }
+    100% {
+     background-position-x: 0px;   
+    }
+}
+
+@keyframes animateWave_02 {
+    0% {
+     background-position-x: 0px;   
+    }
+    100% {
+     background-position-x: 1000px;   
+    }
+}
